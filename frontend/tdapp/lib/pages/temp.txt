@@ -1,0 +1,24 @@
+SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            children: [
+              PieChart(
+                dataMap: {
+                  "Done": done.toDouble(),
+                  "Incomplete": (myTodos.length - done).toDouble(),
+                },
+              ),
+             
+                Column(
+                      children: myTodos.map((e) {
+                        return TodoContainer(
+                            id: e.id,
+                            onPress: () {},
+                            title: e.title,
+                            desc: e.desc,
+                            isDone: e.isDone);
+                      }).toList(),
+                    )
+            ],
+          ),
+        ),
